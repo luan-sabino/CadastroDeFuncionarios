@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Doidera</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body class="h-100 p-0 m-0">
+<div class="container-fluid h-100 d-flex justify-content-center" style="background: #e7f1ff">
+    <div class="container w-75 d-flex flex-column justify-content-center" >
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Data de Nascimento</th>
+                    <th scope="col">Salário</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="funcionario: ${lista_funcionarios}">
+                    <tr scope="row">
+                        <td th:text="${funcionario.getCpf()}">00011122233</td>
+                        <td th:text="${funcionario.getNome()}">Marquinhos Bala</td>
+                        <td th:text="${funcionario.getEmail()}">mb@email.com</td>
+                        <td th:text="${funcionario.getCargo()}">Dummy</td>
+                        <td th:text="${funcionario.getData_de_nascimento()}">11/11/1111</td>
+                        <td th:text="${funcionario.getSalario()}">1111.00</td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</html>

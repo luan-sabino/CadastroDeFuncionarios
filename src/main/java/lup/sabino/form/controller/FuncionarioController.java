@@ -28,12 +28,12 @@ public class FuncionarioController {
 
     private ModelAndView modelAndViewRequest(String viewname){return new ModelAndViewFactory(viewname).create();}
 
-    @ModelAttribute(value="funcionario")
-    public Funcionario funcionario(){
+    @ModelAttribute(value = "funcionario")
+    Funcionario funcionario(){
         return new Funcionario();
     }
 
-    @GetMapping("/index")
+    @GetMapping(value="/index")
     public ModelAndView index(){
         return modelAndViewRequest("index");
     }
